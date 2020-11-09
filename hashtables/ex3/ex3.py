@@ -4,6 +4,19 @@ def intersection(arrays):
     """
     # Your code here
 
+    hash_table = {}
+    result = []
+
+    for arr in arrays:
+        for num in arr:
+            if num not in hash_table:
+                hash_table[num] = 0
+            hash_table[num] += 1
+
+    for key in hash_table.keys():
+        if hash_table[key] == len(arrays):
+            result.append(key)
+
     return result
 
 
